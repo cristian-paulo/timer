@@ -3,19 +3,25 @@
 window.onload = function () 
 {
 	
-	btn = document.getElementById("start");
-	btn.onclick = function()
+	var btnI = document.getElementById("start");
+	var btnB = document.getElementById("back");
+	var center = document.getElementById("center");
+	var counter = document.getElementById("counter");
+
+	btnI.onclick = function ()
 	{
 		var form = document.getElementById("form");
 		var hour = form.hor.value == ""? 0: form.hor.value; //if value is empty, var recibe 0
 		var minute = form.min.value == ""? 0: form.min.value; 
 		var seconds = form.sec.value == ""? 0: form.sec.value;
+		
+		center.className = 'hidden';	
+		btnI.className = 'hidden';
+		counter.className = 'show';
 
-		var local = document.getElementsByClassName("center")[0];			
-		btn.className = 'hidden';
 		var inter = setInterval(function()
 		{
-			local.innerHTML = hour + ":" + minute + ":" + seconds;
+			counter.innerHTML = hour + ":" + minute + ":" + seconds;
 			seconds--;
 
 			if (seconds < 0)
@@ -34,8 +40,19 @@ window.onload = function ()
 				}
 
 			}
+
 		}, 1000);
 
+		btnB.className = 'show';
+		btnB.onclick = function ()
+		{
+			btnB.className = 'hidden';
+			center.className = 'show';
+			counter.className = 'hidden';
+			btnI.className = 'show';
+			hour = 0; minute = 0; seconds = 0;
+		}
+	}
 
-	}		
+
 }

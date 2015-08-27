@@ -9,6 +9,11 @@
 	display:none;
 }
 
+.show
+{
+	display: block;
+}
+
 input
 {
 	width: 15%;
