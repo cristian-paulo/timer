@@ -3,11 +3,14 @@
 window.onload = function () 
 {
 	
-
-	var hour = 0, minute = 59, seconds = 59;
 	btn = document.getElementById("start");
 	btn.onclick = function()
 	{
+		var form = document.getElementById("form");
+		var hour = form.hor.value == ""? 0: form.hor.value; //if value is empty, var recibe 0
+		var minute = form.min.value == ""? 0: form.min.value; 
+		var seconds = form.sec.value == ""? 0: form.sec.value;
+
 		var local = document.getElementsByClassName("center")[0];			
 		btn.className = 'hidden';
 		var inter = setInterval(function()

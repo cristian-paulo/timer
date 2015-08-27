@@ -1,6 +1,15 @@
 
+.center
+{
+	position: relative;
+}
 
 .hidden
 {
 	display:none;
+}
+
+input
+{
+	width: 15%;
 }
