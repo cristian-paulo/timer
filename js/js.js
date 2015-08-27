@@ -4,7 +4,7 @@ window.onload = function ()
 {
 	
 
-	var hour = 1, minute = 60, seconds = 9;
+	var hour = 0, minute = 59, seconds = 59;
 	document.getElementById("start").onclick = function()
 	{
 		var local = document.getElementsByClassName("center")[0];			
@@ -16,8 +16,19 @@ window.onload = function ()
 
 			if (seconds < 0)
 			{
-				clearInterval(inter);
-		alert(seconds);
+				minute--;
+				seconds = 59;
+
+				if (minute < 0) 
+				{
+					hour--;
+					minute = 59;
+					if (hour < 0) 
+					{
+						clearInterval(inter);
+					}
+				}
+
 			}
 		}, 1000);
 
