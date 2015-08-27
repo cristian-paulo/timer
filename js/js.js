@@ -5,10 +5,11 @@ window.onload = function ()
 	
 
 	var hour = 0, minute = 59, seconds = 59;
-	document.getElementById("start").onclick = function()
+	btn = document.getElementById("start");
+	btn.onclick = function()
 	{
 		var local = document.getElementsByClassName("center")[0];			
-		
+		btn.className = 'hidden';
 		var inter = setInterval(function()
 		{
 			local.innerHTML = hour + ":" + minute + ":" + seconds;
