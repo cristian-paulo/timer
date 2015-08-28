@@ -19,9 +19,14 @@ window.onload = function ()
 		btnI.className = 'hidden';
 		counter.className = 'show';
 
+		var padTimex = function(n)
+		{
+			
+			return n < 10 ? "0" + n : n;
+		}
 		var inter = setInterval(function()
 		{
-			counter.innerHTML = hour + ":" + minute + ":" + seconds;
+
 			seconds--;
 
 			if (seconds < 0)
@@ -40,6 +45,11 @@ window.onload = function ()
 				}
 
 			}
+			counter.innerHTML = [ 
+				padTimex(hour),
+				padTimex(minute),
+				padTimex(seconds)
+			].join(":");
 
 		}, 1000);
 
